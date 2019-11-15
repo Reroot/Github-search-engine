@@ -1,0 +1,25 @@
+import React, { Component } from "react"; //import react and componet
+import "./App.css"; //global css
+//componets need to be imported like this
+import Navbar from "./components/layout/Navbar";
+//rce creates render
+
+//extend componet
+class App extends Component {
+	render() {
+		//const name = "Hell";
+		//const loading = true;
+		//const showName = true;
+
+		return (
+			<div>
+				<Navbar />
+				{/* {loading ? <h2>Loading..</h2> 
+        : <h1>Not Loading {showName ? name : null}</h1>} */}
+				{/* {name.toUpperCase()} */}
+			</div>
+		);
+	}
+}
+
+export default App;
