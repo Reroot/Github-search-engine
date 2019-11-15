@@ -1,21 +1,30 @@
-import React, { Component } from "react";
-//import UserItem from "./UserItem";
-class User extends Component {
-	state = {
-		//map array
-		users: [
-			{
-				id: "1",
-				login: "mojombo",
-				avatar_url: "",
-				html_url: ""
-			}
-		]
-	};
+import React, { useContext } from "react";
+import UserItem from "./UserItem";
+import Spinner from "../layout/Spinner";
+import GithubContext from "../../context/github/githubContext";
 
-	render() {
-		return <div></div>;
+const Users = () => {
+	const githubContext = useContext(GithubContext);
+
+	const { loading, users } = githubContext;
+
+	if (loading) {
+		return <Spinner />;
+	} else {
+		return (
+			<div style={userStyle}>
+				{users.map((user) => (
+					<UserItem key={user.id} user={user} />
+				))}
+			</div>
+		);
 	}
-}
+};
 
-export default User;
+const userStyle = {
+	display: "grid",
+	gridTemplateColumns: "repeat(3, 1fr)",
+	gridGap: "1rem"
+};
+
+export default Users;
