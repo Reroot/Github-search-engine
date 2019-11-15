@@ -5,6 +5,8 @@ import Navbar from "./components/layout/Navbar";
 //rce creates render
 
 //extend componet
+//if classes don't have state they don't need to be classes, functions also don't need
+//render
 class App extends Component {
 	render() {
 		//const name = "Hell";
