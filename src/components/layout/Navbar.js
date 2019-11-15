@@ -1,32 +1,30 @@
 //rce enter
 
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-class Navbar extends Component {
-	static defaultProps = {
-		title: "Github-Search",
-		icon: "fab fa-github"
-	};
-	//overwrite
-	static propTypes = {
-		title: PropTypes.string.isRequired,
-		icon: PropTypes.string.isRequired
-	};
+const Navbar = ({ icon, title }) => {
+	return (
+		<div>
+			<nav className="nav-bar bg-primary">
+				<h1>
+					{/* <i className="fab fa-github" /> */}
+					<i className={icon} /> {title}
+					Navbar
+				</h1>
+			</nav>
+		</div>
+	);
+};
 
-	render() {
-		return (
-			<div>
-				<nav className="nav-bar bg-primary">
-					<h1>
-						{/* <i className="fab fa-github" /> */}
-						<i className={this.props.icon} />
-						Navbar
-					</h1>
-				</nav>
-			</div>
-		);
-	}
-}
+Navbar.defaultProps = {
+	title: " Github-Search",
+	icon: "fab fa-github"
+};
+//overwrite
+Navbar.propTypes = {
+	title: PropTypes.string.isRequired,
+	icon: PropTypes.string.isRequired
+};
 
 export default Navbar;
