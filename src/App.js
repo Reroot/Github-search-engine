@@ -3,13 +3,20 @@ import "./App.css"; //global css
 //componets need to be imported like this
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
-
+import axios from "axios";
 //rce creates render
-
+//control c stops server
 //extend componet
 //if classes don't have state they don't need to be classes, functions also don't need
-//render
+//render is lyifecyle method
 class App extends Component {
+	//will fire as soon as the app componet mounts,axios, res is resolve
+	//always make http respects here b=cus it will fire when the app loads
+	componentDidMount() {
+		axios
+			.get("http://api.github.com/users")
+			.then((res) => console.log(res.data));
+	}
 	render() {
 		//const name = "Hell";
 		//const loading = true;
