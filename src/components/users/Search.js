@@ -5,10 +5,10 @@ import AlertContext from "../../context/alert/alertContext";
 const Search = () => {
 	const githubContext = useContext(GithubContext);
 	const alertContext = useContext(AlertContext);
-
 	const [text, setText] = useState("");
-
+	//if not arrow function, then we will have to bind
 	const onSubmit = (e) => {
+		//or else it will submit to a file
 		e.preventDefault();
 		if (text === "") {
 			alertContext.setAlert("Please enter something", "light");
@@ -17,7 +17,7 @@ const Search = () => {
 			setText("");
 		}
 	};
-
+	//e is event
 	const onChange = (e) => setText(e.target.value);
 
 	return (
@@ -25,6 +25,7 @@ const Search = () => {
 			<form onSubmit={onSubmit} className="form">
 				<input
 					type="text"
+					//this will pull
 					name="text"
 					placeholder="Search Users..."
 					value={text}

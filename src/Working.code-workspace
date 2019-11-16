@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "/Users/guts/Desktop/github-search"
+		},
+		{
+			"path": "/Users/guts/Desktop/github-finder-master/src/components/repos"
+		},
+		{
+			"path": "components"
+		}
+	],
+	"settings": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

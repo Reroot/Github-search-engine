@@ -9,7 +9,7 @@ import NotFound from "./components/pages/NotFound";
 
 import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
-
+//2db99a475abca842cd55
 import "./App.css";
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
 				<Router>
 					<div className="App">
 						<Navbar />
+						{/* const res = await axios.get("http://api.github.com/users?client_id=${2db99a475abca842cd55}"); */}
 						<div className="container">
 							<Alert />
 							<Switch>
@@ -59,8 +60,7 @@ export default App;
 // 	//always make http respects here b=cus it will fire when the app loads
 // 	async componentDidMount() {
 // 		this.setState({ loading: true });
-
-// 		const res = await axios.get("http://api.github.com/users");
+// 		const res = await axios.get("http://api.github.com/users?client_id=#{2db99a475abca842cd55}");
 // 		console.log(res.data);
 // 		//with async await
 // 		//axios, without asynic aswait, without the then promise
