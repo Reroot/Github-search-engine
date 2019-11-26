@@ -1,3 +1,5 @@
+Main Project uses the GitHub API to fetch users
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
